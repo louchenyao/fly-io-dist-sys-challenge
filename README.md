@@ -12,7 +12,7 @@ Using lineerizable kv store `lin-kv` is too overkill for this challenge. So I ad
 
 The challenge does not specify "how long" is the "eventual". In theory, the first implementation is technically correct if the "eventual" is infinite.  I found that the test actually waits 10 seconds before the final check. So setting the broadcast interval to 1 seconds is enough to pass the test.
 
-#E# Challenge 5
+### Challenge 5
 
 For test c, the overall msgs-per-op is 14.768623 which is not the best compared to [other solutions](https://community.fly.io/t/challenge-5c-efficient-kafka-style-log/10971). Because in my solution, all writes are cooridinated by `lin-kv`, nodes does not need to send any message to each other. There are ways to improve the performance I did not implement:
 
