@@ -19,3 +19,7 @@ For test c, the overall msgs-per-op is 14.768623 which is not the best compared 
 - Assign a leader for each topic. The leader will be responsible for maintaining the offset, so no cas operation is needed.
 - Compress consecutive messages into a single message. This will reduce the number of reads.
 - Batch commit offsets. Return the `send_ok` message to the client only after the offset is committed. Trade off the latency for throughput.
+
+### Challenge 6
+
+You can see my implementation does not abort any transaction and pass the test. The write set is committed to the database only after all the reads are done. I think it's because **read_committed** is not a strong isolation level and does make too much sense in the real world.
