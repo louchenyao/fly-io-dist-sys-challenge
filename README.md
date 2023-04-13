@@ -22,4 +22,4 @@ For test c, the overall msgs-per-op is 14.768623 which is not the best compared 
 
 ### Challenge 6
 
-You can see my implementation does not abort any transaction and pass the test. The write set is committed to the database only after all the reads are done. I think it's because **read_committed** is not a strong isolation level and does make too much sense in the real world.
+You can see my implementation does not abort any transaction and passes the test. The write set is committed to the database only after all the reads are done. I think it's because **read_committed** is not a strong isolation level and does not make too much sense in the real world.
